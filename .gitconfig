@@ -1,0 +1,32 @@
+[user]
+  name = Martin Rue
+  email = hello@martinrue.com
+
+[core]
+  excludesfile = ~/.gitignore
+  autocrlf = input
+
+[merge]
+  tool = code
+
+[commit]
+  template = ~/.gitmessage
+
+[push]
+  default = simple
+
+[alias]
+  a = add --all
+  d = diff
+  dc = diff --cached
+  c = commit
+  cm = commit -m
+  s = status -s
+  st = status
+  l = log --pretty=oneline --abbrev-commit --max-count=15
+  ll = log --pretty=colored --abbrev-commit --max-count=25
+  lll = log --pretty=graph --graph --abbrev-commit --date=relative
+
+[pretty]
+  colored = format:%C(yellow)%h%Creset <%an> %s %C(green)(%cr) %Creset
+  graph = format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
