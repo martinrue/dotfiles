@@ -18,3 +18,6 @@ let g:go_highlight_operators = 1
 
 let g:go_metalinter_autosave = 1
 let g:go_metalinter_autosave_enabled = ['typecheck', 'golint']
+
+" Show type info
+nnoremap <Leader>t :GoInfo<CR>
