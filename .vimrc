@@ -74,6 +74,9 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 
+" Turn on detection, plugin, and indent
+filetype plugin indent on
+
 " Show line:column
 set ruler
 
@@ -98,9 +101,6 @@ set nowrap
 
 " Don't select first item in completion
 set completeopt=longest,menuone
-
-" Don't show completion preview window
-set completeopt-=preview
 
 " Split below and to the right
 set splitbelow
@@ -224,3 +224,13 @@ fun! LightlineFilename()
        \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
        \ ('' != LightlineModified() ? ' ' . LightlineModified() : '')
 endfun
+
+augroup QuickFixWrap
+  autocmd!
+  autocmd FileType qf setlocal wrap
+augroup END
+
+au FileType qf call AdjustWindowHeight(3, 10)
+function! AdjustWindowHeight(minheight, maxheight)
+  exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
+endfunction
