@@ -21,3 +21,6 @@ let g:go_metalinter_autosave_enabled = ['typecheck', 'golint']
 
 " Show type info
 nnoremap <Leader>t :GoInfo<CR>
+
+" Build project
+nnoremap <Leader>b :GoBuild<CR>
