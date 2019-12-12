@@ -9,9 +9,10 @@ link:
 	@ln -sf  ~/.dotfiles/.gitignore ~/.gitignore
 	@ln -sf  ~/.dotfiles/.gitmessage ~/.gitmessage
 	@ln -sf  ~/.dotfiles/.ignore ~/.ignore
-	@ln -sf  ~/.dotfiles/.stark.js ~/.stark.js
+	@mkdir -p ~/.hammerspoon
+	@ln -sf  ~/.dotfiles/.hammerspoon.lua ~/.hammerspoon/init.lua
 
 clean:
-	@rm -rf ~/.zsh ~/.vim ~/.zshrc ~/.vimrc ~/.gitconfig ~/.gitignore ~/.gitmessage ~/.ignore ~/.stark.js
+	@rm -rf ~/.zsh ~/.vim ~/.zshrc ~/.vimrc ~/.gitconfig ~/.gitignore ~/.gitmessage ~/.ignore ~/.hammerspoon
 
 .PHONY: link clean
