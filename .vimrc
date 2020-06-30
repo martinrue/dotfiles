@@ -45,6 +45,9 @@ Plug 'terryma/vim-multiple-cursors'
 
 call plug#end()
 
+" Disable fzf preview
+let g:fzf_preview_window = ''
+
 " New leader
 let mapleader = ","
 
