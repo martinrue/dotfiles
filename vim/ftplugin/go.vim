@@ -21,7 +21,7 @@ let g:go_highlight_operators = 1
 
 " All checks now being performed by golangci-lint
 let g:go_metalinter_autosave = 1
-let g:go_list_type = "locationlist"
+let g:go_metalinter_autosave_enabled = ['typecheck', 'golint']
 
 " Show type info
 nnoremap <Leader>t :GoInfo<CR>
