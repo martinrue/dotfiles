@@ -2,7 +2,7 @@ hs.window.animationDuration = 0
 
 hs.hotkey.bind({"cmd", "alt"}, "A", function()
   local screen = "Color LCD"
-  local rect = hs.geometry.rect(0.012, 0.022, 0.976, 0.956)
+  local rect = hs.geometry.rect(0.015, 0.025, 0.97, 0.95)
   
   hs.layout.apply({
     {"Code", nil, screen, rect, nil, nil},
