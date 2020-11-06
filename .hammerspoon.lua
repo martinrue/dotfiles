@@ -7,6 +7,7 @@ hs.hotkey.bind({"cmd", "alt"}, "A", function()
   hs.layout.apply({
     {"Code", nil, screen, rect, nil, nil},
     {"iTerm2", nil, screen, rect, nil, nil},
+    {"Xcode", nil, screen, rect, nil, nil},
     {"Safari", nil, screen, rect, nil, nil},
     {"Firefox", nil, screen, rect, nil, nil},
     {"Google Chrome", nil, screen, rect, nil, nil},
