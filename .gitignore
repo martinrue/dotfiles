@@ -2,3 +2,5 @@
 *.local.zsh
 .netrwhist
 vim/plugged
+aliases.local
+
