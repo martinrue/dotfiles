@@ -30,3 +30,5 @@
 [pretty]
   colored = format:%C(yellow)%h%Creset <%an> %s %C(green)(%cr) %Creset
   graph = format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
+[init]
+	defaultBranch = main
