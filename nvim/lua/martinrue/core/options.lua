@@ -7,15 +7,22 @@ opt.relativenumber = true
 opt.number = true
 opt.cursorline = true
 
--- statusline
-opt.laststatus = 3
+-- Disable backup and swap files
+opt.backup = false
+opt.writebackup = false
+opt.swapfile = false
 
--- tabs & indentation
+-- Setup tab settings
 opt.tabstop = 2
 opt.shiftwidth = 2
+opt.softtabstop = 2
 opt.expandtab = true
-opt.autoindent = true
-opt.wrap = false
+
+-- Disable highlighting search results
+opt.hlsearch = false
+
+-- statusline
+opt.laststatus = 3
 
 -- search
 opt.ignorecase = true
