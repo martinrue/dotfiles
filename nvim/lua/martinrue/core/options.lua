@@ -7,6 +7,9 @@ opt.relativenumber = true
 opt.number = true
 opt.cursorline = true
 
+-- statusline
+opt.laststatus = 3
+
 -- tabs & indentation
 opt.tabstop = 2
 opt.shiftwidth = 2
