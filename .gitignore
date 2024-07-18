@@ -1,6 +1,5 @@
 .DS_Store
 *.local.zsh
 .netrwhist
-vim/plugged
 aliases.local
-
+*lock.json
