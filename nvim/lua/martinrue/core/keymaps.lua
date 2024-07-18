@@ -1,5 +1,8 @@
 vim.g.mapleader = " "
 
+-- Insert UUID
+vim.keymap.set("i", "<c-u>", "<c-r>=trim(system('uuidgen | tr A-Z a-z'))<cr>", { desc = "Insert UUID at cursor" })
+
 -- Search
 vim.keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 
