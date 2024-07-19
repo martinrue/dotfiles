@@ -3,6 +3,14 @@ vim.g.mapleader = " "
 -- Insert UUID
 vim.keymap.set("i", "<c-u>", "<c-r>=trim(system('uuidgen | tr A-Z a-z'))<cr>", { desc = "Insert UUID at cursor" })
 
+-- Copy current file path
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>cp",
+	[[:lua vim.fn.setreg('+', vim.fn.expand('%:p'))<CR>]],
+	{ noremap = true, silent = true }
+)
+
 -- Search
 vim.keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 
