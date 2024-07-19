@@ -22,9 +22,11 @@ vim.keymap.set("v", "<a-up>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
 
--- 2-line scrolling
+-- Multi line scrolling
 vim.keymap.set("n", "<s-up>", "2k", { desc = "" })
 vim.keymap.set("n", "<s-down>", "2j", { desc = "" })
+vim.keymap.set("n", "<s-c-up>", "5k", { desc = "" })
+vim.keymap.set("n", "<s-c-down>", "5j", { desc = "" })
 
 -- Save file
 vim.keymap.set({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
