@@ -1,6 +1,6 @@
 vim.cmd("let g:netrw_liststyle = 3")
 
--- Stop inserting comment on enter
+-- stop inserting comment on enter
 vim.cmd("autocmd BufEnter * set formatoptions-=cro")
 vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
 
@@ -11,18 +11,21 @@ opt.relativenumber = true
 opt.number = true
 opt.cursorline = true
 
--- Disable backup and swap files
+-- wrap words
+opt.linebreak = true
+
+-- disable backup and swap files
 opt.backup = false
 opt.writebackup = false
 opt.swapfile = false
 
--- Setup tab settings
+-- tab settings
 opt.tabstop = 2
 opt.shiftwidth = 2
 opt.softtabstop = 2
 opt.expandtab = true
 
--- Disable highlighting search results
+-- disable highlighting search results
 opt.hlsearch = false
 
 -- statusline
