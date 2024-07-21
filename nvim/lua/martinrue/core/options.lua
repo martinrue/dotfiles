@@ -11,8 +11,9 @@ opt.relativenumber = true
 opt.number = true
 opt.cursorline = true
 
--- wrap words
+-- wrap words and keep indent
 opt.linebreak = true
+opt.breakindent = true
 
 -- disable backup and swap files
 opt.backup = false
