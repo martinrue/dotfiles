@@ -10,6 +10,7 @@ hs.hotkey.bind({ "cmd", "alt" }, "A", function()
 	hs.layout.apply({
 		{ "Code", nil, screen, center1, nil, nil },
 		{ "iTerm2", nil, screen, center1, nil, nil },
+		{ "WezTerm", nil, screen, center1, nil, nil },
 		{ "Xcode", nil, screen, center1, nil, nil },
 		{ "Postico", nil, screen, center2, nil, nil },
 		{ "Safari", nil, screen, center1, nil, nil },
