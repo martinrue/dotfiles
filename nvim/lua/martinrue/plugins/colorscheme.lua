@@ -6,12 +6,16 @@ return {
 		local palette = require("nordic.colors")
 
 		require("nordic").setup({
+			italic_comments = false,
 			transparent_bg = true,
 			telescope = { style = "classic" },
 			override = {
 				CursorLine = {
-					bg = "#2e3440",
-					bold = true,
+					bg = "#191919",
+					bold = false,
+				},
+				Visual = {
+					bg = "#151515",
 				},
 			},
 		})
