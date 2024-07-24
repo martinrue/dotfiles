@@ -11,6 +11,9 @@ vim.api.nvim_set_keymap(
 	{ noremap = true, silent = true }
 )
 
+-- Alt-backspace alias for ctrl-w
+vim.keymap.set("i", "<a-bs>", "<c-w>", { desc = "Delete previous word" })
+
 -- Search
 vim.keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 
