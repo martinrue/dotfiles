@@ -12,7 +12,7 @@ return {
 
 		cmp.setup({
 			completion = {
-				completeopt = "menu,menuone,preview,noselect",
+				autocomplete = false,
 			},
 			sources = cmp.config.sources({
 				{ name = "nvim_lsp" },
@@ -23,6 +23,7 @@ return {
 				["<c-up>"] = cmp.mapping.select_prev_item(),
 				["<c-down>"] = cmp.mapping.select_next_item(),
 				["<c-space>"] = cmp.mapping.complete(),
+				["<ESC>"] = cmp.mapping.close(),
 				["<CR>"] = cmp.mapping.confirm({ select = false }),
 			}),
 			formatting = {
