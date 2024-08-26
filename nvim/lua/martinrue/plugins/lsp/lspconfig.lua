@@ -66,9 +66,22 @@ return {
 
 		mason_lspconfig.setup_handlers({
 			function(server_name)
-				lspconfig[server_name].setup({
-					capabilities = capabilities,
-				})
+				if server_name == "tsserver" then
+					lspconfig.tsserver.setup({
+						single_file_support = false,
+						root_dir = lspconfig.util.root_pattern("package.json"),
+						capabilities = capabilities,
+					})
+				elseif server_name == "denols" then
+					lspconfig.denols.setup({
+						root_dir = lspconfig.util.root_pattern("deno.json"),
+						capabilities = capabilities,
+					})
+				else
+					lspconfig[server_name].setup({
+						capabilities = capabilities,
+					})
+				end
 			end,
 		})
 	end,
