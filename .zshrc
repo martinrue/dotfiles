@@ -18,3 +18,10 @@ done
 for config in ~/.zsh/config/*; do
   source $config
 done
+
+# bun completions
+[ -s "/Users/martinrue/.bun/_bun" ] && source "/Users/martinrue/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
