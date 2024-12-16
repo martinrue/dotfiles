@@ -66,8 +66,8 @@ return {
 
 		mason_lspconfig.setup_handlers({
 			function(server_name)
-				if server_name == "tsserver" then
-					lspconfig.tsserver.setup({
+				if server_name == "ts_ls" then
+					lspconfig.ts_ls.setup({
 						single_file_support = false,
 						root_dir = lspconfig.util.root_pattern("package.json"),
 						capabilities = capabilities,
