@@ -1,7 +1,11 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
-config.color_scheme = "Material Darker (base16)"
+local light = "iTerm2 Solarized Light"
+local dark = "Material Darker (base16)"
+local active_scheme = dark
+
+config.color_scheme = active_scheme
 config.font = wezterm.font("MesloLGS Nerd Font Mono")
 config.font_size = 14
 
@@ -52,6 +56,24 @@ config.keys = {
 		mods = "OPT",
 		action = wezterm.action({ SendString = "\x1bf" }),
 	},
+	{
+		key = "g",
+		mods = "CMD",
+		action = wezterm.action.EmitEvent("toggle-scheme"),
+	},
 }
+
+wezterm.on("toggle-scheme", function(window, pane)
+	local overrides = window:get_config_overrides() or {}
+	local current_scheme = overrides.color_scheme or active_scheme
+
+	if current_scheme == dark then
+		overrides.color_scheme = light
+	else
+		overrides.color_scheme = dark
+	end
+
+	window:set_config_overrides(overrides)
+end)
 
 return config
