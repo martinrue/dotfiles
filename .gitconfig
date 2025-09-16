@@ -5,9 +5,20 @@
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input
+	pager = delta
+
+[include]
+	path = ~/.dotfiles/delta/themes.gitconfig
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	navigate = true
+	features = arctic-fox
 
 [merge]
-  tool = code
+	conflictStyle = zdiff3 
 
 [commit]
   template = ~/.gitmessage
@@ -30,7 +41,9 @@
 [pretty]
   colored = format:%C(yellow)%h%Creset <%an> %s %C(green)(%cr) %Creset
   graph = format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
+
 [init]
 	defaultBranch = main
+
 [pull]
 	rebase = false

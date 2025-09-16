@@ -9,6 +9,8 @@ export PATH="$DENO_INSTALL/bin:$PATH"
 export COPYFILE_DISABLE=1
 export HOMEBREW_NO_AUTO_UPDATE=1
 
+export DELTA_PAGER="less --mouse"
+
 # load custom executable functions
 for function in ~/.zsh/functions/*; do
   source $function
