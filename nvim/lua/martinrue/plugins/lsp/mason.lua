@@ -22,7 +22,6 @@ return {
 		mason_lspconfig.setup({
 			ensure_installed = {
 				"ts_ls",
-				"denols",
 				"html",
 				"cssls",
 				"gopls",

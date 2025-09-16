@@ -1,0 +1,13 @@
+theme = Nord Wave
+macos-icon = glass
+
+font-family = "Iosevka Term Bold"
+
+macos-window-buttons = hidden
+macos-titlebar-style = tabs
+
+window-padding-balance = true
+background-opacity = 0.97
+
+keybind = cmd+s=text:\x13
+

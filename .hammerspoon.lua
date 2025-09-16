@@ -8,10 +8,9 @@ hs.hotkey.bind({ "cmd", "alt" }, "A", function()
 	local center3 = hs.geometry.rect(0.125, 0.20, 0.75, 0.60)
 
 	hs.layout.apply({
-		{ "WezTerm", nil, screen, center1, nil, nil },
+		{ "Ghostty", nil, screen, center1, nil, nil },
 		{ "Postico", nil, screen, center2, nil, nil },
 		{ "Safari", nil, screen, center1, nil, nil },
-		{ "Firefox", nil, screen, center1, nil, nil },
 		{ "Google Chrome", nil, screen, center1, nil, nil },
 		{ "Telegram", nil, screen, center3, nil, nil },
 	})

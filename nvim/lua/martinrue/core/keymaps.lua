@@ -43,8 +43,5 @@ vim.keymap.set("n", "<s-down>", "5j", { desc = "" })
 -- Save file
 vim.keymap.set({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
 
--- Toggle theme
-vim.keymap.set("n", "<leader>tt", ":ToggleTheme<CR>", { desc = "Toggle Theme" })
-
 -- Quit
 vim.keymap.set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
