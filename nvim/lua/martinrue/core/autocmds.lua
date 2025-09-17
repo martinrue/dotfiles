@@ -20,3 +20,13 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		-- stylua: ignore end
 	end,
 })
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+	pattern = "*",
+	callback = function()
+		vim.api.nvim_set_hl(0, "SnacksPicker", { bg = "none", nocombine = true })
+		vim.api.nvim_set_hl(0, "SnacksPickerBorder", { fg = "#333333", bg = "none", nocombine = true })
+		vim.api.nvim_set_hl(0, "SnacksPickerListCursorLine", { fg = "none", bg = "#282828", nocombine = true })
+		vim.api.nvim_set_hl(0, "CursorLine", { fg = "none", bg = "#282828", nocombine = true })
+	end,
+})

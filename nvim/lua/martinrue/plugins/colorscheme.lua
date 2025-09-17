@@ -8,6 +8,9 @@ return {
 
 			require("nordic").setup({
 				italic_comments = false,
+				transparent = {
+					bg = true,
+				},
 			})
 
 			vim.cmd.colorscheme("nordic")
