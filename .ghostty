@@ -9,7 +9,7 @@ macos-titlebar-style = tabs
 window-padding-balance = true
 background-opacity = 0.97
 
-window-inherit-working-directory = false
+window-inherit-working-directory = true
 window-save-state = never
 
 keybind = cmd+s=text:\x13
