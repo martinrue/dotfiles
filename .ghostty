@@ -13,4 +13,4 @@ window-inherit-working-directory = true
 window-save-state = never
 
 keybind = cmd+s=text:\x13
-
+keybind = opt+backspace=text:\x17
