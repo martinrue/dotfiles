@@ -1,7 +1,6 @@
+font-family = "Iosevka Term Bold"
 theme = Nord Wave
 macos-icon = glass
-
-font-family = "Iosevka Term Bold"
 
 macos-window-buttons = hidden
 macos-titlebar-style = tabs
@@ -11,6 +10,8 @@ background-opacity = 0.97
 
 window-inherit-working-directory = true
 window-save-state = never
+window-position-x = 50
+window-position-y = 50
 
 keybind = cmd+s=text:\x13
 keybind = opt+backspace=text:\x17
