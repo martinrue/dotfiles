@@ -16,6 +16,9 @@ return {
 			enabled = true,
 			sources = {
 				explorer = {
+					diagnostics = false,
+					git_status = false,
+					hidden = true,
 					layout = {
 						auto_hide = { "input" },
 					},
