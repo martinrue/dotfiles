@@ -18,6 +18,7 @@ return {
 				explorer = {
 					diagnostics = false,
 					git_status = false,
+					exclude = { "node_modules" },
 					hidden = true,
 					layout = {
 						auto_hide = { "input" },
@@ -71,7 +72,7 @@ return {
 		{
 			"<leader>ff",
 			function()
-				Snacks.picker.files({ hidden = true })
+				Snacks.picker.files({ hidden = true, ignored = true, exclude = { "node_modules" } })
 			end,
 			desc = "Find Files",
 		},
