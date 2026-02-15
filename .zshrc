@@ -27,3 +27,6 @@ done
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# opencode
+export PATH=/Users/martinrue/.opencode/bin:$PATH

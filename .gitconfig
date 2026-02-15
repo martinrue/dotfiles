@@ -16,6 +16,7 @@
 [delta]
 	navigate = true
 	features = arctic-fox
+	side-by-side = true
 
 [merge]
 	conflictStyle = zdiff3 
