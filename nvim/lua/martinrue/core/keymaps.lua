@@ -45,3 +45,15 @@ vim.keymap.set({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Sav
 
 -- Quit
 vim.keymap.set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
+
+local function toggle_theme()
+	if vim.g.colors_name == "nordic" then
+		vim.o.background = "light"
+		vim.cmd.colorscheme("solarized")
+	else
+		vim.o.background = "dark"
+		vim.cmd.colorscheme("nordic")
+	end
+end
+
+vim.keymap.set("n", "<leader>tt", toggle_theme, { desc = "Toggle theme" })

@@ -1,7 +1,7 @@
 font-family = "Iosevka Term Bold"
 font-size = 14
 font-feature = -calt, -liga, -dig
-theme = Nord Wave
+theme = dark:Nord Wave,light:Builtin Solarized Light
 macos-icon = glass
 
 macos-window-buttons = hidden

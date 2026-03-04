@@ -24,9 +24,16 @@ vim.api.nvim_create_autocmd("LspAttach", {
 vim.api.nvim_create_autocmd("ColorScheme", {
 	pattern = "*",
 	callback = function()
-		vim.api.nvim_set_hl(0, "SnacksPicker", { bg = "none", nocombine = true })
-		vim.api.nvim_set_hl(0, "SnacksPickerBorder", { fg = "#333333", bg = "none", nocombine = true })
-		vim.api.nvim_set_hl(0, "SnacksPickerListCursorLine", { fg = "none", bg = "#282828", nocombine = true })
-		vim.api.nvim_set_hl(0, "CursorLine", { fg = "none", bg = "#282828", nocombine = true })
+		if vim.g.colors_name == "nordic" then
+			vim.api.nvim_set_hl(0, "SnacksPicker", { bg = "none", nocombine = true })
+			vim.api.nvim_set_hl(0, "SnacksPickerBorder", { fg = "#333333", bg = "none", nocombine = true })
+			vim.api.nvim_set_hl(0, "SnacksPickerListCursorLine", { fg = "none", bg = "#282828", nocombine = true })
+			vim.api.nvim_set_hl(0, "CursorLine", { fg = "none", bg = "#282828", nocombine = true })
+		elseif vim.g.colors_name == "solarized" then
+			vim.api.nvim_set_hl(0, "SnacksPicker", { bg = "none", nocombine = true })
+			vim.api.nvim_set_hl(0, "SnacksPickerBorder", { fg = "#93a1a1", bg = "none", nocombine = true })
+			vim.api.nvim_set_hl(0, "SnacksPickerListCursorLine", { fg = "none", bg = "#eee8d5", nocombine = true })
+			vim.api.nvim_set_hl(0, "CursorLine", { fg = "none", bg = "#eee8d5", nocombine = true })
+		end
 	end,
 })

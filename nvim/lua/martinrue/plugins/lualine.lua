@@ -6,7 +6,7 @@ return {
 
 		lualine.setup({
 			options = {
-				theme = "onedark",
+				theme = "auto",
 			},
 			sections = {
 				lualine_a = { "mode" },
