@@ -9,9 +9,13 @@ hs.hotkey.bind({ "cmd", "alt" }, "A", function()
 
 	hs.layout.apply({
 		{ "Ghostty", nil, screen, center1, nil, nil },
-		{ "Postico", nil, screen, center2, nil, nil },
 		{ "Safari", nil, screen, center1, nil, nil },
 		{ "Google Chrome", nil, screen, center1, nil, nil },
+		{ "Codex", nil, screen, center1, nil, nil },
+		{ "Discord", nil, screen, center1, nil, nil },
+		{ "Postico", nil, screen, center2, nil, nil },
+		{ "SQLiteFlow", nil, screen, center2, nil, nil },
 		{ "Telegram", nil, screen, center3, nil, nil },
+		{ "WhatsApp", nil, screen, center3, nil, nil },
 	})
 end)

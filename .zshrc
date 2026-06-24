@@ -1,10 +1,8 @@
 export GOPATH=$HOME/Projects/go
 export PATH=$GOPATH/bin:$PATH
+export PATH="$HOME/.local/bin:$PATH"
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
-
-export DENO_INSTALL="/Users/martinrue/.deno"
-export PATH="$DENO_INSTALL/bin:$PATH"
 
 export COPYFILE_DISABLE=1
 export HOMEBREW_NO_AUTO_UPDATE=1
@@ -21,6 +19,8 @@ for config in ~/.zsh/config/*; do
   source $config
 done
 
+source "$HOME/.cargo/env"
+
 # bun completions
 [ -s "/Users/martinrue/.bun/_bun" ] && source "/Users/martinrue/.bun/_bun"
 
@@ -28,5 +28,3 @@ done
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-# opencode
-export PATH=/Users/martinrue/.opencode/bin:$PATH
