@@ -1,5 +1,11 @@
 hs.window.animationDuration = 0
 
+function codexThreadsNew()
+	hs.urlevent.openURL("codex://threads/new?path=/Users/martinrue")
+end
+
+hs.hotkey.bind({ "cmd", "alt" }, "C", codexThreadsNew)
+
 hs.hotkey.bind({ "cmd", "alt" }, "A", function()
 	local screen = hs.screen.mainScreen()
 
