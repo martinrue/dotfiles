@@ -17,7 +17,7 @@ hs.hotkey.bind({ "cmd", "alt" }, "A", function()
 		{ "Ghostty", nil, screen, center1, nil, nil },
 		{ "Safari", nil, screen, center1, nil, nil },
 		{ "Google Chrome", nil, screen, center1, nil, nil },
-		{ "Codex", nil, screen, center1, nil, nil },
+		{ "ChatGPT", nil, screen, center1, nil, nil },
 		{ "Discord", nil, screen, center1, nil, nil },
 		{ "Postico", nil, screen, center2, nil, nil },
 		{ "SQLiteFlow", nil, screen, center2, nil, nil },
