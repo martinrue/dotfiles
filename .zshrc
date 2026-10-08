@@ -28,3 +28,4 @@ source "$HOME/.cargo/env"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
+[ -f "$HOME/.zshrc.work" ] && source "$HOME/.zshrc.work"
