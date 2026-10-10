@@ -1,0 +1,3 @@
+wt() {
+	cd "$(git worktree list | grep -i -- "$1" | head -1 | awk '{print $1}')"
+}
