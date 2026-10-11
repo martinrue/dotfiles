@@ -1,0 +1,98 @@
+wt() {
+	if [ -z "$1" ]; then
+		cat <<-EOF
+		usage: wt <command>
+
+		  -                go to the main worktree
+		  ls               list worktrees
+		  new <name>       create .worktrees/<name> on branch wt/<name> and go to it
+		  merge [pattern]  rebase onto main, fast-forward main, remove worktree and branch
+		  rm [pattern]     remove worktree and branch without merging
+		  diff [pattern]   show the commits and changes that merge will add
+		  <pattern>        go to the first worktree that matches pattern
+
+		With no pattern, merge, rm and diff use the current worktree.
+		EOF
+		return
+	fi
+
+	local main=$(git worktree list | head -1 | awk '{print $1}')
+	[ -z "$main" ] && return 1
+	local base=$(git -C "$main" branch --show-current)
+	local target branch ref
+
+	if [[ "$1" == (merge|rm|diff) ]]; then
+		if [ -n "$2" ]; then
+			target=$(git worktree list | tail -n +2 | grep -i -- "$2" | head -1 | awk '{print $1}')
+		else
+			target=$(git rev-parse --show-toplevel)
+		fi
+
+		if [ -z "$target" ] || [ "$target" = "$main" ]; then
+			echo "wt: no worktree found"
+			return 1
+		fi
+
+		# Empty on a detached HEAD (e.g. Codex worktrees), so fall back to the commit.
+		branch=$(git -C "$target" branch --show-current)
+		ref=${branch:-$(git -C "$target" rev-parse HEAD)}
+	fi
+
+	case "$1" in
+		-)
+			cd "$main"
+			;;
+		ls)
+			git worktree list
+			;;
+		new)
+			if [ -z "$2" ]; then
+				echo "usage: wt new <name>"
+				return 1
+			fi
+
+			git -C "$main" worktree add -b "wt/$2" "$main/.worktrees/$2" "$base" || return 1
+			cd "$main/.worktrees/$2"
+			;;
+		merge)
+			if [ -n "$(git -C "$target" status --porcelain)" ]; then
+				echo "wt: $target has uncommitted changes"
+				return 1
+			fi
+
+			if [ -n "$(git -C "$main" status --porcelain --untracked-files=no)" ]; then
+				echo "wt: $main has uncommitted changes"
+				return 1
+			fi
+
+			git -C "$target" rebase "$base" || return 1
+			ref=${branch:-$(git -C "$target" rev-parse HEAD)}
+			cd "$main"
+			local old=$(git rev-parse HEAD)
+			git merge --ff-only "$ref" || return 1
+			git worktree remove "$target" || return 1
+			if [ -n "$branch" ]; then
+				git branch -d "$branch" || return 1
+			fi
+			git log --oneline "$old..HEAD"
+			;;
+		rm)
+			printf "Remove %s and delete %s, with all its changes? [y/N] " "$target" "$ref"
+			local answer
+			read -r answer
+			[[ "$answer" == [yY] ]] || return 1
+			cd "$main"
+			git worktree remove --force "$target" || return 1
+			if [ -n "$branch" ]; then
+				git branch -D "$branch"
+			fi
+			;;
+		diff)
+			git -C "$main" log --oneline "$base..$ref"
+			git -C "$main" diff --stat "$base...$ref"
+			;;
+		*)
+			cd "$(git worktree list | grep -i -- "$1" | head -1 | awk '{print $1}')"
+			;;
+	esac
+}

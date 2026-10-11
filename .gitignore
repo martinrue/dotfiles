@@ -3,3 +3,4 @@
 .netrwhist
 aliases.local
 *lock.json
+.worktrees/
