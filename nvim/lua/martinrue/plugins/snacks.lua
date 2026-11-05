@@ -17,7 +17,7 @@ return {
 			sources = {
 				explorer = {
 					diagnostics = false,
-					git_status = false,
+					git_status = true,
 					exclude = { "node_modules" },
 					hidden = true,
 					layout = {

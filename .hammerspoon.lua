@@ -15,6 +15,7 @@ hs.hotkey.bind({ "cmd", "alt" }, "A", function()
 
 	hs.layout.apply({
 		{ "Ghostty", nil, screen, center1, nil, nil },
+		{ "Rex Beta", nil, screen, center1, nil, nil },
 		{ "Safari", nil, screen, center1, nil, nil },
 		{ "Google Chrome", nil, screen, center1, nil, nil },
 		{ "Slack", nil, screen, center1, nil, nil },

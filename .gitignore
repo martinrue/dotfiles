@@ -4,3 +4,5 @@
 aliases.local
 *lock.json
 .worktrees/
+.node-version
+

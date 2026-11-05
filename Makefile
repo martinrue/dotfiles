@@ -8,6 +8,9 @@ link:
 	@mkdir -p ~/.config/ghostty
 	@ln -sf  ~/.dotfiles/.ghostty ~/.config/ghostty/config
 
+	@mkdir -p ~/.config/rex
+	@ln -sf  ~/.dotfiles/.rex.lua ~/.config/rex/init.lua
+
 	@ln -sf  ~/.dotfiles/.gitconfig ~/.gitconfig
 	@ln -sf  ~/.dotfiles/.gitignore ~/.gitignore
 	@ln -sf  ~/.dotfiles/.gitmessage ~/.gitmessage
@@ -20,6 +23,6 @@ link:
 	@ln -sf  ~/.dotfiles/AGENTS.md ~/.codex/AGENTS.md
 
 clean:
-	@rm -rf ~/.zsh ~/.config/nvim ~/.zshrc ~/.config/ghostty/config ~/.gitconfig ~/.gitignore ~/.gitmessage ~/.hammerspoon ~/.claude/CLAUDE.md ~/.codex/AGENTS.md
+	@rm -rf ~/.zsh ~/.config/nvim ~/.zshrc ~/.config/ghostty/config ~/.config/rex/init.lua ~/.gitconfig ~/.gitignore ~/.gitmessage ~/.hammerspoon ~/.claude/CLAUDE.md ~/.codex/AGENTS.md
 
 .PHONY: link clean
